@@ -36,3 +36,10 @@ A range where `min === max` (width 1) is a degenerate but legal input. `clamp` a
 - `reflect(x, min, max)` — bounce off boundaries into `[min, max]`.
 - `createRange(min, max)` — returns `{ min, max, clamp, wrap, reflect }`.
 - `IntegerClampRangeError` — thrown on invalid input; the `name` property is `'IntegerClampRangeError'`.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
