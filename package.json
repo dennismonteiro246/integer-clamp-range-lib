@@ -1,6 +1,6 @@
 {
   "name": "integer-clamp-range-lib",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Bounds integers via clamping, wrapping, and reflection for coordinate systems and tile-based maps.",
   "type": "module",
   "main": "src/index.js",
